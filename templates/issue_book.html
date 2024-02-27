@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center"><u>All Books List</u></h1>
+    <table class="table table-hover" id="example">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>User</th>
+                <th>Branch</th>
+                <th>Mobile Num</th>
+                <th>Student Image</th>
+                <th>IssueDate</th>
+                <th>ExpiryDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for issue in issues %}
+            <tr>
+                <td>{{forloop.counter}}.</td>
+                <td>{{issue.student.user}}</td>
+                <td>{{issue.student.branch}}</td>
+                <td>{{issue.student.mobile_num}}</td>
+                <td><img src="{{issue.student.stu_image.url}}" alt="" style="height: 100px; width: 120px;"></td>
+                <td>{{issue.issue_date}}</td>
+                <td>{{issue.returndate}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+{% endblock body %}

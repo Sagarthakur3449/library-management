@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center"><u>Students List</u></h1>
+    <table class="table table-hover" id="example">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>User</th>
+                <th>Mobile Number</th>
+                <th>Branch</th>
+                <th>Image</th>
+                <th>Book</th>
+                <th>IssueDate</th>
+                <th>ReturnDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{forloop.counter}}.</td>
+                <td>{{student.student.user.username}}</td>
+                <td>{{student.student.mobile_num}}</td>
+                <td>{{student.student.branch}}</td>
+                <td><img src="{{student.student.stu_image.url}}" alt="" height="25"></td>
+                <td>{{student.book}}</td>
+                <td>{{student.issue_date}}</td>
+                <td>{{student.returndate}}</td>
+                <td><a href="{% url 'delete_student' id=student.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+{% endblock body %}

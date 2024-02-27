@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block body %}
+
+<table>
+    <thead>
+        <th>SrNo</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Writer</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            {% for i in book %}
+            <td>{{forloop.counter}}</td>
+            <td>{{i.category}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.writer}}</td>
+            <td>{{i.description}}</td>
+            <td><a href="book_list/"{{i}}></a>Book list</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+
+{% endblock body %}

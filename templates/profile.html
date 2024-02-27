@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <div class="row m-auto">
+        <div class="col-4">
+            <h1 class="mt-5 text-success">Welcome To Central Library</h1>
+            <p>"A modern librarian, who has faith in the law that 'BOOKS ARE FOR USE' is happy only when his readers
+                make his shelves constantly empty. It is not the books that go out that worry him. It is the
+                stay-at-home volumes that perplex and depress him."</p>
+        </div>
+        <div class="col-4 ">
+            <img class="" src="https://source.unsplash.com/800x400/?library" alt="img">
+        </div>
+    </div>
+</div>
+<li>
+    <button><a href="{% url 'add_book'%}">AddBook</a></button>
+  </li>
+  <li>
+    <button><a href="{% url 'view_books' %}">ViewBook</a></button>
+  </li>
+  <li>
+    <button><a href="{% url 'issue_book'%}">IssueBook</a></button>
+  </li>
+  <li>
+    <button><a href="{% url 'view_students_book'%}">ViewStudentBook</a></button>
+  </li>
+
+{% endblock body %}
